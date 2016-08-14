@@ -4,6 +4,7 @@ class Product
 {
 
     const SHOW_BY_DEFAULT = 3;
+    const SHOW_BY_DEFAULT_RECOMENDED_ITEMS = 6;
 
     public static function getLatestProducts($count = self::SHOW_BY_DEFAULT)
     {
@@ -27,6 +28,29 @@ class Product
         return $list;
     }
 
+    public static function getRecomendedProducts($count = self::SHOW_BY_DEFAULT_RECOMENDED_ITEMS)
+    {
+        $count = intval($count);
+
+        $db = Db::getConnection();
+        $result = $db->query('SELECT id, name, price, is_new '
+                . 'FROM product '
+                . 'WHERE status=1 AND is_recommended=1 '
+                . 'ORDER BY id DESC LIMIT ' . $count);
+
+        $list = array();
+        $i = 0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $list[$i]['id'] = $row['id'];
+            $list[$i]['name'] = $row['name'];
+            $list[$i]['price'] = $row['price'];
+            $list[$i]['is_new'] = $row['is_new'];
+            $i++;
+        }
+
+        return $list;
+    }
+    
     public static function getProductsListByCategory($categoryId = false, $page = 1)
     {
         if ($categoryId) {
@@ -81,4 +105,25 @@ class Product
         return $count['count'];
     }
 
+    public static function getProductsByIds($productsIds)
+    {
+        $products = array();
+        $idsString = implode(',', $productsIds);
+
+        $db = Db::getConnection();
+        $sql = "SELECT * FROM product WHERE id IN ($idsString)";
+        
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['code'] = $row['code'];
+            $products[$i]['name'] = $row['name'];
+            $products[$i]['price'] = $row['price'];
+            $i++;
+        }
+        return $products;
+    }
 }
