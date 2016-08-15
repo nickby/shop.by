@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Server/data/htdocs/shop.by/views/catalog/category.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/controllers/AdminCategoryController.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/views/catalog/index.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/controllers/AdminProductController.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/components/Db.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/views/site/index.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/models/Product.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/views/admin_product/update.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/controllers/AdminOrderController.php</file>
+            <file>file:/C:/Server/data/htdocs/shop.by/config/routes.php</file>
+        </group>
     </open-files>
 </project-private>

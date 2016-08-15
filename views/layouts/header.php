@@ -42,6 +42,7 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="/admin/"><i class="fa fa-sign-in"></i></a></li>
                                 </ul>
                             </div>
                         </div>

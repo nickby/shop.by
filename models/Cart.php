@@ -27,10 +27,7 @@ class Cart
     {
         $id = intval($id);
 
-        $productsInCart = array();
-        if (isset($_SESSION['products'])) {
-            $productsInCart = $_SESSION['products'];
-        }
+        $productsInCart = self::getProducts();
 
         if (array_key_exists($id, $productsInCart)) {
             unset($productsInCart[$id]);
