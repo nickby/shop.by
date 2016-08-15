@@ -13,8 +13,7 @@ class SiteController
 
         $recomendedProducts = array();
         $recomendedProducts = Product::getRecomendedProducts(6);
-        //echo '<pre>'; print_r($recomendedProducts);
-
+        
         require_once(ROOT . '/views/site/index.php');
         return true;
     }

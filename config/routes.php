@@ -5,6 +5,8 @@ return array(
     'catalog'                   => 'catalog/index',           // actionIndex    in CatalogController
     'category/(\d+)/page-(\d+)' => 'catalog/category/$1/$2',  // actionCategory in CatalogController
     'category/(\d+)'            => 'catalog/category/$1',     // actionCategory in CatalogController
+    'cart/checkout'             => 'cart/checkout',           // actionCheckout in CartController
+    'cart/delete/(\d+)'         => 'cart/delete/$1',          // actionDelete   in CartController
     'cart/add/(\d+)'            => 'cart/add/$1',             // actionAdd      in CartController
     'cart/addAjax/(\d+)'        => 'cart/addAjax/$1',         // actionAddAjax  in CartController
     'cart'                      => 'cart/index',              // actionIndex    in CartController

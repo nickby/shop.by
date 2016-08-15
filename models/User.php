@@ -132,4 +132,12 @@ class User
         return $result->execute();
     }
 
+    public static function checkPhone($phone)
+    {
+        if (strlen($phone)>=5) {
+            return true;
+        }
+        return false;
+    }
+    
 }
